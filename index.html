@@ -228,14 +228,14 @@
                     <div className="bg-slate-950 rounded border border-slate-800 p-3 font-mono text-xs text-slate-300 shadow-inner">
                       <span className="text-pink-400">class</span> vTensor {'{'}<br/>
                       &nbsp;&nbsp;void* <span className="text-blue-300">data;</span><br/>
-                      &nbsp;&nbsp;int <span className="text-emerald-400">storage_format;</span><br/>
+                      &nbsp;&nbsp;int <span className="text-blue-300">storage_format;</span><br/>
                       {'}'}
                     </div>
                     <div className="bg-slate-950 rounded border border-slate-800 p-3 font-mono text-xs text-slate-300 shadow-inner">
                       <span className="text-pink-400">class</span> vOp {'{'}<br/>
                       &nbsp;&nbsp;vTensor* <span className="text-blue-300">input;</span><br/>
                       &nbsp;&nbsp;vTensor* <span className="text-blue-300">output;</span><br/>
-                      &nbsp;&nbsp;Callable* <span className="text-emerald-400">impl; # CUDA/Triton/Tile-lang/ThunderKittens/Mirage/...</span><br/>
+                      &nbsp;&nbsp;Callable* <span className="text-blue-300">impl; # CUDA/Triton/Tile-lang/ThunderKittens/Mirage/...</span><br/>
                       {'}'}
                     </div>
                   </div>
@@ -378,7 +378,7 @@
                 </h1>
 
                 <h2 className="text-xl md:text-2xl font-semibold mb-6 text-slate-700 tracking-tight leading-snug">
-                  the duality of design: building AI and the worlds that let AI grow
+                  The duality of design: building AI and the worlds that let AI grow
                 </h2>
 
                 
@@ -407,7 +407,7 @@
                         <span>Code</span>
                     </a>
                     <a
-                        href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf"
+                        href="https://infini-ai-lab.github.io/vortex_torch/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 hover:text-blue-600 transition-colors"
@@ -451,12 +451,12 @@
                     <strong className="text-blue-600">
                         Vortex
                     </strong>
-                    </a>, through composable abstractions, enables a SOTA agent not only proposes but fully implements a sparse attention algorithm in a SOTA LLM serving system in a single run, work that would usually take an ML-systems engineer weeks.
+                    </a>, through composable abstractions, enables a SOTA agent not only proposes but fully implements a sparse attention (SA) algorithm in a SOTA LLM serving system in a single run, work that would usually take an ML-systems engineer weeks.
                 </p>
 
                 <PerformanceResults />
                 <p className="text-lg text-slate-700 mb-8">
-                AI agents delivered 4X throughput improvements for LLM Inference, enabled by our abstraction that allows AI to rapidly generate and implement new SA algorithms in the inference Engine. 
+                AI agents delivered 4X throughput improvements for LLM Inference, enabled by our abstraction that allows AI to rapidly generate and implement new SA algorithms in the inference engine. 
                 </p>
                 <SectionHeader title="The Reliability Gap" />
                 
@@ -491,20 +491,16 @@
                   <strong>Backgrounds.</strong> Sparse Attention could be a cornerstone of efficient LLM reasoning.  AI agents should be the ideal executors of sparse-attention innovation. They are intelligent enough to extract algorithms from research papers and knowledgeable enough to write performant underlying kernels. 
                 </p>
                 <p className="text-lg text-slate-700 mb-6">
-                  However, this is almost impossible for an agent. Serving engines (SGLang <a href="#ref8">[8]</a>, vLLM <a href="#ref9">[9]</a>) are too complex for AI. Especially, memory management is complicated: <strong>(1)</strong> memory layouts, flat, ragged and paged might occur in computation; <strong>(2)</strong> various modules, such as memory pool and attention backend, operate the storage in different logics. So, instead of asking the agent to understand the whole engine, we built an <strong>abstraction layer</strong>.
+                  However, this is almost impossible for an agent. Serving engines (SGLang <a href="#ref8">[8]</a>, vLLM <a href="#ref9">[9]</a>) are too complex for AI. Especially, memory management is complicated: <strong>(1)</strong> different memory layouts might occur in computation; <strong>(2)</strong> various modules, such as memory pool and attention backend, operate the storage in different logics. So, instead of asking the agent to understand the whole engine, we built an <strong>abstraction layer</strong>.
                 </p>
                 <ul className="text-lg text-slate-700 mb-6 list-disc pl-6">
                 <li>
                     A two-phase frontend that decouples caching (executed in the memory pool)
                     and indexing workflows (executed in the attention backend), enabling
-                    different tensor views and interpretations.
+                    different tensor views and interpretations. <span className="text-pink-400">(vFlow)</span>
                 </li>
                 <li>
-                    A unified operator interface in which tensors carry a specific
-                    <strong>storage_format</strong> field describing their layout in serving
-                    systems. This metadata decouples the algorithm from hardware execution and
-                    guides the system in dispatching the correct operator behavior and kernel
-                    implementation.
+                    A unified operator interface in which tensors carry a specific <span className="text-blue-300"> storage_format</span> field describing their layout in serving systems. This metadata decouples the algorithm from hardware execution and guides the system in dispatching the correct operator behavior and kernel implementation. <span className="text-pink-400">(vOp & vTensor)</span>
                 </li>
                 </ul>
 
