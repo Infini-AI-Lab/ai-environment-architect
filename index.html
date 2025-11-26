@@ -196,52 +196,6 @@
           
           <div className="p-8 relative">
             <div className="flex flex-col gap-6 max-w-lg mx-auto relative z-10">
-              
-              {/* Agent Layer */}
-              <div className="bg-slate-800 border border-slate-600 p-4 rounded-lg flex items-center gap-4 shadow-lg transform transition-transform hover:-translate-y-1">
-                <div className="p-2 bg-purple-500/10 rounded-lg">
-                  <Icon name="Brain" className="w-6 h-6 text-purple-400" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-200 text-sm">AI Agent</h4>
-                  <p className="text-xs text-slate-400">Generates Algorithms & Kernels</p>
-                </div>
-              </div>
-
-              {/* Arrow Down */}
-              <div className="flex justify-center -my-2">
-                <div className="h-8 w-px bg-gradient-to-b from-slate-600 to-blue-500"></div>
-              </div>
-
-              {/* Abstraction Layer */}
-              <div className="bg-blue-900/20 border border-blue-500/50 p-5 rounded-lg relative backdrop-blur-sm transform transition-transform hover:-translate-y-1">
-                <div className="absolute -top-3 left-4 px-2 py-0.5 bg-blue-600 text-white text-[10px] font-bold rounded shadow-sm">THE ABSTRACTION</div>
-                <div className="flex items-start gap-4">
-                  <Icon name="Layers" className="w-8 h-8 text-blue-400 mt-1" />
-                  <div className="flex-1">
-                    <h4 className="font-bold text-blue-100 text-sm mb-2">Vortex Interface</h4>
-                    <div className="bg-slate-950 rounded border border-slate-800 p-3 font-mono text-xs text-slate-300 shadow-inner">
-                      <span className="text-pink-400">class</span> vFlow(ABC) {'{'}<br/>
-                      &nbsp;&nbsp;void <span className="text-blue-300">forward_indexer(); # attention backend</span><br/>
-                      &nbsp;&nbsp;void <span className="text-blue-300">forward_cache(); # memory pool</span><br/>
-                      {'}'}
-                    </div>
-                    <div className="bg-slate-950 rounded border border-slate-800 p-3 font-mono text-xs text-slate-300 shadow-inner">
-                      <span className="text-pink-400">class</span> vTensor {'{'}<br/>
-                      &nbsp;&nbsp;void* <span className="text-blue-300">data;</span><br/>
-                      &nbsp;&nbsp;int <span className="text-blue-300">storage_format;</span><br/>
-                      {'}'}
-                    </div>
-                    <div className="bg-slate-950 rounded border border-slate-800 p-3 font-mono text-xs text-slate-300 shadow-inner">
-                      <span className="text-pink-400">class</span> vOp {'{'}<br/>
-                      &nbsp;&nbsp;vTensor* <span className="text-blue-300">input;</span><br/>
-                      &nbsp;&nbsp;vTensor* <span className="text-blue-300">output;</span><br/>
-                      &nbsp;&nbsp;Callable* <span className="text-blue-300">impl; # CUDA/Triton/Tile-lang/ThunderKittens/Mirage/...</span><br/>
-                      {'}'}
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               {/* Arrow Down */}
               <div className="flex justify-center -my-2">
