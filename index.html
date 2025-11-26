@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>From Software Engineer to AI Environment Architect</title>
-  
+ 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -117,7 +117,7 @@
       const EvolutionTimeline = () => (
         <div className="my-10 p-8 bg-slate-50 rounded-xl border border-slate-200">
           <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wide mb-8 text-center">The Evolution of the Engineering Role</h3>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative">
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 relative">
             {/* Step 1 */}
             <div className="flex flex-col items-center text-center z-10 w-full md:w-1/3 group">
               <div className="w-16 h-16 bg-white border-2 border-slate-200 rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:border-blue-400 transition-colors">
@@ -134,7 +134,7 @@
 
             {/* Step 3 */}
             <div className="flex flex-col items-center text-center z-10 w-full md:w-1/3 group">
-              <div className="w-16 h-16 bg-blue-600 border-2 border-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:border-blue-400 transition-colors">
+              <div className="w-16 h-16 bg-blue-600 border-2 border-blue-200 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:border-blue-400 transition-colors">
                 <Icon name="Layout" className="w-7 h-7 text-white" />
               </div>
               <h4 className="font-bold text-slate-700">Environment Architect</h4>
@@ -374,6 +374,11 @@
                   From Software Engineer to <br/>
                   <span className="text-blue-600">AI Environment Architect</span>
                 </h1>
+
+                <h2 className="text-xl md:text-2xl font-semibold mb-6 text-slate-700 tracking-tight leading-snug">
+                  the duality of design: building AI and the worlds that let AI grow
+                </h2>
+
                 
                 <div className="flex items-center gap-6 text-sm text-slate-500 border-b border-slate-100 pb-8">
                   <div className="flex items-center gap-2">
@@ -413,7 +418,16 @@
                 <EvolutionTimeline />
                 </p>
                 <p className="text-lg text-slate-700 mb-8">
-                In the demo below, we show this shift in action. Our recent project, <a href="https://github.com/Infini-AI-Lab/vortex_torch/tree/v1"><strong>Vortex (https://github.com/Infini-AI-Lab/vortex_torch/tree/v1)</strong></a>, through composable abstractions, enables a SOTA agent not only proposes but fully implements a sparse attention algorithm in a SOTA LLM serving system in a single run, work that would usually take an ML-systems engineer weeks.
+                In the demo below, we show this shift in action. Our recent project, {" "}
+                    <a
+                    href="https://github.com/Infini-AI-Lab/vortex_torch/tree/v1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <strong className="text-blue-600">
+                        Vortex
+                    </strong>
+                    </a>, through composable abstractions, enables a SOTA agent not only proposes but fully implements a sparse attention algorithm in a SOTA LLM serving system in a single run, work that would usually take an ML-systems engineer weeks.
                 </p>
 
                 <PerformanceResults />
@@ -422,59 +436,68 @@
                 </p>
                 <SectionHeader title="The Reliability Gap" />
                 
-                <p className="text-slate-700 mb-6">
-                  AI is rapidly taking over the ML system workflow. We see this clearly in tasks like kernel generation. Writing efficient kernels (CUDA [1], Triton [2], Tile-lang [3], ThunderKittens [4]) used to require deep expertise in memory hierarchies. Today, if you give an agent a clear function signature and intrinsics, it can produce highly optimized code.
+                <p className="text-lg text-slate-700 mb-6">
+                  AI is rapidly taking over the ML system workflow. We see this clearly in tasks like kernel generation. Writing efficient kernels (CUDA <a href="#ref1">[1]</a>, Triton <a href="#ref2">[2]</a>, Tile-lang <a href="#ref3">[3]</a>, ThunderKittens <a href="#ref4">[4]</a>) used to require deep expertise in memory hierarchies. Today, if you give an agent a clear function signature and intrinsics, it can produce highly optimized code.
                 </p>
-                <p className="text-slate-700 mb-6">
+                <p className="text-lg text-slate-700 mb-6">
                   However, this competence drops off a cliff when you ask an agent to "fix a bug in the serving engine." Without global context, agents hallucinate dependencies or break implicit contracts.
                 </p>
 
                 <CapabilitySpectrum />
 
-                <p className="text-slate-700 mt-8 mb-6">
-                  We can't just wait for models to get smarter. With training data becoming a bottleneck (see Karpathy [5], LeCun [6], Sutton [7]), we need a complementary path. We need to <strong>architect the environment</strong> to make current agents productive in real systems, but they also create the very worlds in which future agents will learn, reason, and evolve.
+                <p className="text-lg text-slate-700 mt-8 mb-6">
+                  We can't just wait for models to get smarter. With training data becoming a bottleneck (see Karpathy <a href="#ref5">[5]</a>, LeCun <a href="#ref6">[6]</a>, Sutton <a href="#ref7">[7]</a>), we need a complementary path. We need to <strong>architect the environment</strong> to make current agents productive in real systems, but they also create the very worlds in which future agents will learn, reason, and evolve.
                 </p>
 
                 <SectionHeader title="Case Study: The Vortex System" />
 
-                <p className="text-slate-700 mb-6">
-                  We tested this philosophy with a project called <a href="https://github.com/Infini-AI-Lab/vortex_torch/tree/v1"><strong>Vortex</strong></a>. The goal was to let AI agents implement Sparse Attention (SA) algorithms in a high-performance LLM serving engine.
+                <p className="text-lg text-slate-700 mb-6">
+                  We tested this philosophy with a project called {" "}
+
+                  <a href="https://github.com/Infini-AI-Lab/vortex_torch/tree/v1"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >
+                    <strong className="text-blue-600">
+                        Vortex
+                    </strong>
+                  </a>. The goal was to let AI agents implement Sparse Attention (SA) algorithms in a high-performance LLM serving engine.
                 </p>
-                <p className="text-slate-700 mb-6">
+                <p className="text-lg text-slate-700 mb-6">
                   <strong>Backgrounds.</strong> Sparse Attention could be a cornerstone of efficient LLM reasoning.  AI agents should be the ideal executors of sparse-attention innovation. They are intelligent enough to extract algorithms from research papers and knowledgeable enough to write performant underlying kernels. 
                 </p>
-                <p className="text-slate-700 mb-6">
-                  However, this is almost impossible for an agent. Serving engines (SGLang [8], vLLM [9]) are too complex for AI. Especially, memory management is complicated: <strong>(1)</strong> memory layouts, flat, ragged and paged might occur in computation; <strong>(2)</strong> various modules, such as memory pool and attention backend, operate the storage in different logics. So, instead of asking the agent to understand the whole engine, we built an <strong>abstraction layer</strong>.
+                <p className="text-lg text-slate-700 mb-6">
+                  However, this is almost impossible for an agent. Serving engines (SGLang <a href="#ref8">[8]</a>, vLLM <a href="#ref9">[9]</a>) are too complex for AI. Especially, memory management is complicated: <strong>(1)</strong> memory layouts, flat, ragged and paged might occur in computation; <strong>(2)</strong> various modules, such as memory pool and attention backend, operate the storage in different logics. So, instead of asking the agent to understand the whole engine, we built an <strong>abstraction layer</strong>.
                 </p>
-                <p className="text-slate-700 mb-6">
+                <p className="text-lg text-slate-700 mb-6">
                   We introduced <strong>(1)</strong> a unified operator interface where tensors carry a specific <strong>storage_format</strong> field, which encodes how they are laid out in serving systems. This simple metadata field decouples the algorithm from the hardware execution and guides the system in dispatching the correct operator behavior and kernel implementation; <strong>(2)</strong> a two-phase frontend that decouples caching (executed in memory pool) and indexing workflows (executed in attention backend), so that we can enable different tensor view/interpretations.
                 </p>
 
                 <VortexArchitecture />
 
-                <p className="text-slate-700 mt-8 mb-6">
+                <p className="text-lg text-slate-700 mt-8 mb-6">
                   This design is beneficial. The agent didn't need to know <em>how</em> the memory was allocated—it just needed to respect the interface. It could focus on:
                 </p>
                 <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
                   <li>Expressing new algorithms using high-level operators.</li>
                   <li>Generating optimized kernels for specific I/O contracts.</li>
                 </ul>
-                <p className="text-slate-700 mb-6">
+                <p className="text-lg text-slate-700 mb-6">
                   The impact was immediate. A SOTA agent not only proposed but fully implemented an improved Sparse Attention algorithm in a single run. The throughput gains were improved compared to full attention.
                 </p>
 
                 <SectionHeader title="The New Engineer's Mandate" />
 
-                <p className="text-slate-700 mb-6">
+                <p className="text-lg text-slate-700 mb-6">
                   Vortex illustrates the shift from "implementer" to "architect." We wrote minimal code for the algorithm/kernels itself. Instead, we focused entirely on the <strong>scaffolding</strong>.
                 </p>
-                <p className="text-slate-700 mb-8">
+                <p className="text-lg text-slate-700 mb-8">
                   This approach serves two critical purposes:
                 </p>
 
                 <DualRoleFramework />
 
-                <p className="text-slate-700 mb-6">
+                <p className="text-lg text-slate-700 mb-6">
                   In the short term, these environments allow AI agents to contribute meaningfully to real engineering work today. In the long term, they become the playgrounds where future agents learn to surpass the limitations we see today.
                 </p>
 
@@ -493,57 +516,57 @@
                 
                 <SectionHeader title="Reference" />
 
-                <p className="text-slate-700 mb-6">
+                <p id="ref1" className="text-slate-700 mb-6">
                     [1] <a href="https://developer.nvidia.com/cuda-toolkit" target="_blank" rel="noopener noreferrer">
-                        https://developer.nvidia.com/cuda-toolkit
+                        CUDA Document
                     </a>
                 </p>
 
-                <p className="text-slate-700 mb-6">
+                <p id="ref2" className="text-slate-700 mb-6">
                     [2] <a href="https://triton-lang.org/main/index.html" target="_blank" rel="noopener noreferrer">
-                        https://triton-lang.org/main/index.html
+                        Triton Document
                     </a>
                 </p>
 
-                <p className="text-slate-700 mb-6">
+                <p id="ref3" className="text-slate-700 mb-6">
                     [3] <a href="https://tilelang.com/" target="_blank" rel="noopener noreferrer">
-                        https://tilelang.com/
+                        Tile-lang Document
                     </a>
                 </p>
 
-                <p className="text-slate-700 mb-6">
+                <p id="ref4" className="text-slate-700 mb-6">
                     [4] <a href="https://hazyresearch.stanford.edu/blog/2024-05-12-quick-tk" target="_blank" rel="noopener noreferrer">
-                        https://hazyresearch.stanford.edu/blog/2024-05-12-quick-tk
+                        ThunderKittens Blog
                     </a>
                 </p>
 
-                <p className="text-slate-700 mb-6">
+                <p id="ref5" className="text-slate-700 mb-6">
                     [5] <a href="https://x.com/karpathy/status/1979644538185752935" target="_blank" rel="noopener noreferrer">
                         https://x.com/karpathy/status/1979644538185752935
                     </a>
                 </p>
 
-                <p className="text-slate-700 mb-6">
+                <p id="ref6" className="text-slate-700 mb-6">
                     [6] <a href="https://x.com/ylecun/status/1839787777833218050" target="_blank" rel="noopener noreferrer">
                         https://x.com/ylecun/status/1839787777833218050
                     </a>
                 </p>
 
-                <p className="text-slate-700 mb-6">
+                <p id="ref7" className="text-slate-700 mb-6">
                     [7] <a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf" target="_blank" rel="noopener noreferrer">
-                        https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf
+                        Welcome to the Era of Experience
                     </a>
                 </p>
                 
-                <p className="text-slate-700 mb-6">
+                <p id="ref8" className="text-slate-700 mb-6">
                     [8] <a href="https://github.com/sgl-project/sglang" target="_blank" rel="noopener noreferrer">
-                        https://github.com/sgl-project/sglang
+                        SGLang Github
                     </a>
                 </p>
                 
-                <p className="text-slate-700 mb-6">
+                <p id="ref9" className="text-slate-700 mb-6">
                     [9] <a href="https://github.com/vllm-project/vllm" target="_blank" rel="noopener noreferrer">
-                        https://github.com/vllm-project/vllm
+                        vLLM Github
                     </a>
                 </p>
 
