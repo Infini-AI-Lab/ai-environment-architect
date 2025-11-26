@@ -455,6 +455,24 @@
                     </a>, through composable abstractions, enables a SOTA agent from Openhands [10] not only proposes but fully implements a sparse attention (SA) algorithm in a SOTA LLM serving system in a single run, work that would usually take an ML-systems engineer weeks.
                 </p>
 
+                <PerformanceResults />
+                <p className="text-lg text-slate-700 mb-8">
+                AI agents delivered 4X throughput improvements for LLM Inference, enabled by our abstraction that allows AI to rapidly generate and implement new SA algorithms in the inference engine. 
+                </p>
+                <SectionHeader title="The Reliability Gap" />
+                
+                <p className="text-lg text-slate-700 mb-6">
+                  AI is rapidly taking over the ML system workflow. We see this clearly in tasks like kernel generation. Writing efficient kernels (CUDA <a href="#ref1">[1]</a>, Triton <a href="#ref2">[2]</a>, Tile-lang <a href="#ref3">[3]</a>, ThunderKittens <a href="#ref4">[4]</a>) used to require deep expertise in memory hierarchies. Today, if you give an agent a clear function signature and intrinsics, it can produce highly optimized code.
+                </p>
+                <p className="text-lg text-slate-700 mb-6">
+                  However, this competence drops off a cliff when you ask an agent to "fix a bug in the serving engine." Without global context, agents hallucinate dependencies or break implicit contracts.
+                </p>
+
+                <CapabilitySpectrum />
+
+                <p className="text-lg text-slate-700 mt-8 mb-6">
+                  We can't just wait for models to get smarter. With training data becoming a bottleneck (see Karpathy <a href="#ref5">[5]</a>, LeCun <a href="#ref6">[6]</a>, Sutton <a href="#ref7">[7]</a>), we need a complementary path. We need to <strong>architect the environment</strong> to make current agents productive in real systems, but they also create the very worlds in which future agents will learn, reason, and evolve.
+                </p>
 
               </main>
             </div>
