@@ -212,7 +212,24 @@
               <div className="flex justify-center -my-2">
                 <div className="h-8 w-px bg-gradient-to-b from-slate-600 to-blue-500"></div>
               </div>
-              
+
+              {/* Abstraction Layer */}
+              <div className="bg-blue-900/20 border border-blue-500/50 p-5 rounded-lg relative backdrop-blur-sm transform transition-transform hover:-translate-y-1">
+                <div className="absolute -top-3 left-4 px-2 py-0.5 bg-blue-600 text-white text-[10px] font-bold rounded shadow-sm">THE ABSTRACTION</div>
+                <div className="flex items-start gap-4">
+                  <Icon name="Layers" className="w-8 h-8 text-blue-400 mt-1" />
+                  <div className="flex-1">
+                    <h4 className="font-bold text-blue-100 text-sm mb-2">Vortex Interface</h4>
+                    <div className="bg-slate-950 rounded border border-slate-800 p-3 font-mono text-xs text-slate-300 shadow-inner">
+                      <span className="text-pink-400">class</span> vFlow(ABC) {'{'}<br/>
+                      &nbsp;&nbsp;void <span className="text-blue-300">forward_indexer(); # attention backend</span><br/>
+                      &nbsp;&nbsp;void <span className="text-blue-300">forward_cache(); # memory pool</span><br/>
+                      {'}'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Arrow Down */}
               <div className="flex justify-center -my-2">
                 <div className="h-8 w-px bg-gradient-to-b from-blue-500 to-slate-600"></div>
